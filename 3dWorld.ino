@@ -1,9 +1,5 @@
 #include "SPI.h"
 #include "EEPROM.h"
-
-// Created by Ben McLean
-// based on code from http://lodev.org/cgtutor/raycasting.html
-
 #include "Arduboy.h"
 
 #define global_seed 62
