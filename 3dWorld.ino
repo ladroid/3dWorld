@@ -82,6 +82,9 @@ void setup() {
 void loop() {
   arduboy.clear();
 
+  // Define a threshold for dithering (can be adjusted)
+  const double ditheringThreshold = 2.0; // Example value, adjust as needed
+
   for (int x = 0; x < w; x++)
   {
     //calculate ray position and direction
@@ -162,8 +165,18 @@ void loop() {
     int drawEnd = lineHeight / 2 + h / 2;
     if (drawEnd >= h)drawEnd = h - 1;
 
-    //draw the pixels of the stripe as a vertical line
-    arduboy.drawFastVLine(x, drawStart, drawEnd - drawStart, 1);
+    // Draw the pixels of the stripe as a vertical line
+    if (perpWallDist > ditheringThreshold) {
+      // Apply dithering for distant walls
+      for (int y = drawStart; y < drawEnd; y++) {
+        if ((x + y) % 2 == 0) {  // Simple checkerboard dithering pattern
+          arduboy.drawPixel(x, y, 1);
+        }
+      }
+    } else {
+      // Draw solid line for closer walls
+      arduboy.drawFastVLine(x, drawStart, drawEnd - drawStart, 1);
+    }
   }
 
   oldTime = currentTime;

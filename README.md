@@ -8,6 +8,7 @@ This Arduino sketch is designed to run on the Arduboy handheld gaming device. It
 - Particle system with basic physics.
 - User input handling for movement and particle generation.
 - Procedural map generation based on a hashing function.
+- Dithering
 
 ## Movement and Controls
 - Use the UP and DOWN buttons to move forward and backward.
