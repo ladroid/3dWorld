@@ -27,4 +27,4 @@ This Arduino sketch is designed to run on the Arduboy handheld gaming device. It
 ## Legal
 Copyright (C) 2023 ladroid.
 
-This code is [BSD-3-Clause Licensed](https://github.com/ladroid/The-hunt-has-begun/blob/master/LICENSE.md).
+This code is [BSD-3-Clause Licensed](https://github.com/ladroid/3dWorld/blob/main/LICENSE.txt).
